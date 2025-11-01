@@ -3,20 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/css/spstyle.css</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/src/java/com/fshop/serverlet/ProductListServlet.java</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/khuyenmai.jsp</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/src/java/com/fshop/model/Product.java</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/includes/header.jsp</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/sanpham.jsp</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/src/java/util/DBConection.java</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/index.jsp</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/css/style.css</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/src/java/com/fshop/dao/ProductDAO.java</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/gioithieu.jsp</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/includes/footer.jsp</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/web/lienhe.jsp</file>
-            <file>file:/E:/DeTaiWeb/NoiThatShop/src/java/Database/noithat_db.sql</file>
+            <file>file:/D:/qlcf/DeTaiWeb/NoiThatShop/src/java/com/fshop/model/Product.java</file>
+            <file>file:/D:/qlcf/DeTaiWeb/NoiThatShop/web/lienhe.jsp</file>
+            <file>file:/D:/qlcf/DeTaiWeb/NoiThatShop/src/java/Database/noithat_db.sql</file>
+            <file>file:/D:/qlcf/DeTaiWeb/NoiThatShop/src/java/com/fshop/dao/ProductDAO.java</file>
+            <file>file:/D:/qlcf/DeTaiWeb/NoiThatShop/web/khuyenmai.jsp</file>
+            <file>file:/D:/qlcf/DeTaiWeb/NoiThatShop/web/gioithieu.jsp</file>
+            <file>file:/D:/qlcf/DeTaiWeb/NoiThatShop/web/sanpham.jsp</file>
+            <file>file:/D:/qlcf/DeTaiWeb/NoiThatShop/web/index.jsp</file>
         </group>
     </open-files>
 </project-private>
