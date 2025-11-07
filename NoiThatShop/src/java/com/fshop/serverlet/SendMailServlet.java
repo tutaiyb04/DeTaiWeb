@@ -24,8 +24,8 @@ public class SendMailServlet extends HttpServlet {
         String email = request.getParameter("email");
         String message = request.getParameter("message");
 
-        final String adminEmail = "tutaiyb2411@gmail.com";
-        final String adminPassword = "cayrznhtooeqmtur"; // ← BỎ KHOẢNG TRẮNG
+        final String adminEmail = "daominhtuan584@gmail.com";
+        final String adminPassword = "lsqamewvhfaoizxa"; // ← BỎ KHOẢNG TRẮNG
 
         // === SMTP SSL – ổn định nhất ===
         Properties props = new Properties();
