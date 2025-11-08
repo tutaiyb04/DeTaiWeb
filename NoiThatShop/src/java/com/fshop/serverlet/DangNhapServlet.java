@@ -6,7 +6,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-import Database.DBConnect;
+import util.DBConection;
 
 @WebServlet("/dangnhap")
 public class DangNhapServlet extends HttpServlet {
@@ -18,7 +18,7 @@ public class DangNhapServlet extends HttpServlet {
         String tenDangNhap = request.getParameter("tenDangNhap");
         String matKhau = request.getParameter("matKhau");
 
-        NguoiDungDAO dao = new NguoiDungDAO(DBConnect.getConnection());
+        NguoiDungDAO dao = new NguoiDungDAO(DBConection.getConnection());
         NguoiDung user = dao.dangNhap(tenDangNhap, matKhau);
 
         if (user != null) {

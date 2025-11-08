@@ -6,7 +6,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import com.fshop.dao.NguoiDungDAO;
 import com.fshop.model.NguoiDung;
-import Database.DBConnect;
+import util.DBConection;
 
 @WebServlet("/dangky")
 public class DangKyServlet extends HttpServlet {
@@ -22,7 +22,7 @@ public class DangKyServlet extends HttpServlet {
         String matKhau = request.getParameter("matKhau");
 
         NguoiDung user = new NguoiDung(tenDangNhap, hoTen, email, soDienThoai, diaChi, matKhau);
-        NguoiDungDAO dao = new NguoiDungDAO(DBConnect.getConnection());
+        NguoiDungDAO dao = new NguoiDungDAO(DBConection.getConnection());
 
         boolean ok = dao.dangKy(user);
         if (ok) {
