@@ -7,9 +7,23 @@
         </div>
         <div class="header-right">
             <span>Hotline: 0344 076 552</span> |
-            <a href="#">Đăng nhập</a> |
-            <a href="#">Đăng ký</a> |
+            <%
+            String tenDangNhap = (String) session.getAttribute("tenDangNhap");
+            if (tenDangNhap == null) {
+            %>
+            <a href="dangnhap.jsp" style="color:white; text-decoration:none;">Đăng nhập</a> |
+            <a href="dangky.jsp" style="color:white; text-decoration:none;">Đăng ký</a> |
+        <% 
+ } else { 
+        %>
+            Xin chào, <strong><%= tenDangNhap %></strong> |
+            <a href="dangxuat.jsp" style="color:white; text-decoration:none;">Đăng xuất</a> |
+        <% 
+            } 
+        %>
             <a href="#">Giỏ hàng (0)</a>
+            
+           
         </div>
     </div>
 
@@ -20,6 +34,7 @@
             <li><a href="gioithieu.jsp">Giới thiệu</a></li>
             <li><a href="lienhe.jsp">Liên hệ</a></li>
             <li><a href="khuyenmai.jsp">Khuyến mãi</a></li>
+          
         </ul>
     </nav>
 </header>
