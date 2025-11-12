@@ -8,6 +8,14 @@
         <servlet-name>SendMailServlet</servlet-name>
         <servlet-class>com.fshop.serverlet.SendMailServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>XuLyQuenMatKhauServlet</servlet-name>
+        <servlet-class>com.fshop.serverlet.XuLyQuenMatKhauServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DatLaiMatKhau</servlet-name>
+        <servlet-class>com.fshop.serverlet.DatLaiMatKhau</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductListServlet</servlet-name>
         <url-pattern>/ProductListServlet</url-pattern>
@@ -21,20 +29,4 @@
             30
         </session-timeout>
     </session-config>
-    <filter>
-        <filter-name>EncodingFilter</filter-name>
-        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
-        <init-param>
-            <param-name>encoding</param-name>
-            <param-value>UTF-8</param-value>
-        </init-param>
-        <init-param>
-            <param-name>forceEncoding</param-name>
-            <param-value>true</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>EncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 </web-app>

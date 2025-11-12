@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2025 lúc 11:54 AM
+-- Thời gian đã tạo: Th10 12, 2025 lúc 07:03 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -100,8 +100,20 @@ CREATE TABLE `nguoi_dung` (
   `so_dien_thoai` varchar(30) DEFAULT NULL,
   `dia_chi` varchar(255) DEFAULT NULL,
   `mat_khau` varchar(255) NOT NULL,
+  `reset_token` varchar(255) DEFAULT NULL,
+  `token_expiry` datetime DEFAULT NULL,
   `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `nguoi_dung`
+--
+
+INSERT INTO `nguoi_dung` (`id`, `ten_dang_nhap`, `ho_ten`, `email`, `so_dien_thoai`, `dia_chi`, `mat_khau`, `reset_token`, `token_expiry`, `ngay_tao`) VALUES
+(1, 'tutai', 'Từ Tú Tài', 'tutaiyb2411@gmail.com', '0344076552', 'Yên Bái', 'tutai123', NULL, NULL, '2025-11-08 09:00:20'),
+(2, 'tutaiyb', 'Từ Tú Tài', 'tttai.dhti16a1cl@sv.uneti.edu.vn', '0344076552', 'Yên Bái', '2412004tt', NULL, NULL, '2025-11-12 04:26:04'),
+(3, 'hung', 'Nguyễn Mạnh Hùng', 'hungnguyennn16012004@gmail.com', '0325413210', 'Hải Phòng', 'hung123', NULL, NULL, '2025-11-12 06:00:39'),
+(4, 'tuan', 'Đào Minh Tuấn', 'tutaiyb24112004@gmail.com', '0354648521', 'Hải Phòng', 'tuan1', NULL, NULL, '2025-11-12 06:01:09');
 
 -- --------------------------------------------------------
 
@@ -237,7 +249,7 @@ ALTER TABLE `lien_he`
 -- AUTO_INCREMENT cho bảng `nguoi_dung`
 --
 ALTER TABLE `nguoi_dung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `san_pham`
