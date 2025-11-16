@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 16, 2025 lúc 11:58 AM
+-- Thời gian đã tạo: Th10 16, 2025 lúc 02:53 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -34,6 +34,34 @@ CREATE TABLE `chi_tiet_don_hang` (
   `so_luong` int(11) DEFAULT NULL,
   `don_gia` decimal(12,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `chi_tiet_don_hang`
+--
+
+INSERT INTO `chi_tiet_don_hang` (`id`, `id_don_hang`, `id_san_pham`, `so_luong`, `don_gia`) VALUES
+(26, 8, 3, 1, 315000.00),
+(27, 8, 4, 1, 4990000.00),
+(28, 8, 5, 1, 5992000.00),
+(29, 8, 9, 1, 1183000.00),
+(30, 9, 1, 1, 8990000.00),
+(31, 9, 4, 1, 4990000.00),
+(32, 9, 6, 1, 7590000.00),
+(33, 10, 4, 1, 4990000.00),
+(34, 10, 6, 1, 7590000.00),
+(35, 10, 8, 1, 2090000.00),
+(36, 11, 1, 1, 8990000.00),
+(37, 11, 4, 1, 4990000.00),
+(38, 11, 6, 1, 7590000.00),
+(39, 12, 4, 1, 4990000.00),
+(40, 13, 1, 1, 8990000.00),
+(41, 14, 1, 1, 8990000.00),
+(42, 15, 4, 1, 4990000.00),
+(43, 16, 4, 1, 4990000.00),
+(44, 17, 1, 1, 8990000.00),
+(45, 18, 1, 1, 8990000.00),
+(46, 19, 4, 1, 4990000.00),
+(47, 20, 4, 1, 4990000.00);
 
 -- --------------------------------------------------------
 
@@ -80,6 +108,25 @@ CREATE TABLE `don_hang` (
   `payment_method` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `don_hang`
+--
+
+INSERT INTO `don_hang` (`id`, `id_nguoi_dung`, `customer_name`, `address`, `phone`, `email`, `tong_tien`, `shipping_fee`, `discount`, `grand_total`, `notes`, `trang_thai`, `ngay_tao`, `payment_method`) VALUES
+(8, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 12480000.00, 0.00, 500000.00, 11980000.00, '', 'Chờ xử lý', '2025-11-16 11:54:39', 'momo'),
+(9, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 21570000.00, 0.00, 500000.00, 21070000.00, '', 'Chờ xử lý', '2025-11-16 11:57:10', 'momo'),
+(10, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 14670000.00, 0.00, 500000.00, 14170000.00, '', 'Chờ xử lý', '2025-11-16 11:57:31', 'card'),
+(11, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 21570000.00, 0.00, 500000.00, 21070000.00, '', 'Chờ xử lý', '2025-11-16 13:00:37', 'momo'),
+(12, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 4990000.00, 0.00, 500000.00, 4490000.00, '', 'Chờ xử lý', '2025-11-16 13:01:34', 'momo'),
+(13, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 8990000.00, 0.00, 500000.00, 8490000.00, '', 'Chờ xử lý', '2025-11-16 13:17:24', 'momo'),
+(14, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 8990000.00, 0.00, 500000.00, 8490000.00, '', 'Chờ xử lý', '2025-11-16 13:24:49', 'momo'),
+(15, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 4990000.00, 0.00, 500000.00, 4490000.00, '', 'Chờ xử lý', '2025-11-16 13:34:05', 'momo'),
+(16, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 4990000.00, 0.00, 500000.00, 4490000.00, '', 'Chờ xử lý', '2025-11-16 13:36:37', 'momo'),
+(17, 3, 'Nguyễn Mạnh Hùng', 'Hải Phòng', '0325413210', 'hungnguyennn16012004@gmail.com', 8990000.00, 50000.00, 500000.00, 8540000.00, '', 'Chờ xử lý', '2025-11-16 13:38:27', 'cod'),
+(18, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 8990000.00, 0.00, 500000.00, 8490000.00, '', 'Chờ xử lý', '2025-11-16 13:49:36', 'momo'),
+(19, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 4990000.00, 0.00, 500000.00, 4490000.00, '', 'Chờ xử lý', '2025-11-16 13:51:09', 'card'),
+(20, 1, 'Từ Tú Tài', '360 Giải Phóng, Phường Phương Liệt, Quận Thanh Xuân, Hà Nội', '0344076552', 'tutaiyb2411@gmail.com', 4990000.00, 0.00, 500000.00, 4490000.00, '', 'Chờ xử lý', '2025-11-16 13:51:23', 'bank');
+
 -- --------------------------------------------------------
 
 --
@@ -92,16 +139,6 @@ CREATE TABLE `gio_hang` (
   `product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `gio_hang`
---
-
-INSERT INTO `gio_hang` (`id`, `user_id`, `product_id`, `quantity`) VALUES
-(27, 1, 3, 1),
-(28, 1, 4, 1),
-(29, 1, 2, 1),
-(31, 1, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -265,7 +302,7 @@ ALTER TABLE `san_pham`
 -- AUTO_INCREMENT cho bảng `chi_tiet_don_hang`
 --
 ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT cho bảng `danh_muc`
@@ -277,13 +314,13 @@ ALTER TABLE `danh_muc`
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `gio_hang`
 --
 ALTER TABLE `gio_hang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT cho bảng `lien_he`
