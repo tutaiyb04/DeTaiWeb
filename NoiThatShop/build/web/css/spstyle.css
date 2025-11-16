@@ -10,6 +10,9 @@ body {
     background-color: #fdfbf9;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* HEADER */
@@ -87,13 +90,18 @@ header {
     color: #ffd700;
 }
 
+.main-container{
+    flex-grow: 1;
+    width: 90%;
+    margin: 20px auto;
+}
+
 /* Trang SẢN PHẨM (2 CỘT) */
 .content-wrapper{
     display: flex;
     gap: 25px;
-    width: 90%;
-    margin: 20px auto;
 }
+
 /* Sidebar bên trái */
 .category-sidebar{
     width: 22%;
@@ -148,13 +156,27 @@ header {
     gap: 20px;
 }
 
+/* Thêm một div bọc để nhóm các nút lại */
+.product-card .button-group {
+    margin-top: auto; /* Đẩy nhóm nút xuống cuối cùng */
+    width: 100%;
+    padding-top: 10px; /* Thêm khoảng cách nếu cần */
+}
+
 .product-card{
+   /* Các thuộc tính cũ giữ nguyên, CHỈ THÊM 3 dòng sau: */
+    display: flex; /* Bật Flexbox */
+    flex-direction: column; /* Xếp các mục theo chiều dọc */
+    justify-content: space-between; /* Quan trọng: Đẩy mục cuối cùng (nút) xuống đáy */
+
+    /* ... các thuộc tính khác như padding, box-shadow ... */
     background-color: #fff;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
     box-shadow: 0 2px 6px rgb(0,0,0,0.05);
     transition: 0.3s;
+    height: 100%; /* Đảm bảo thẻ con chiếm toàn bộ chiều cao trong lưới (Grid) */
 }
 
 .product-card:hover{
@@ -165,6 +187,19 @@ header {
     width: 100%;
     height: 200px;
     border-radius: 10px;
+}
+
+.product-card p {
+    /* Đảm bảo chiều cao tối thiểu cho mô tả */
+    min-height: 40px; /* Hoặc 60px tùy thuộc vào 2-3 dòng mô tả */
+    margin-bottom: 10px;
+    
+    /* Ẩn bớt nếu mô tả quá dài và tránh làm lệch bố cục */
+    overflow: hidden; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 .price{
@@ -187,14 +222,170 @@ header {
     background-color: #333;
 }
 
-/* FOOTER */
+/* Modal (Pop-up) styles */
+.modal {
+    display: none; /* Ẩn theo mặc định */
+    position: fixed; /* Ở trên tất cả */
+    z-index: 1000; /* Luôn ở trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); /* Nền mờ */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Đặt ở giữa trang */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Chiều rộng */
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Chi tiết sản phẩm trong Modal */
+.product-detail-container {
+    display: flex;
+    gap: 30px;
+}
+
+.product-detail-left {
+    flex: 1;
+}
+
+.product-detail-left img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.product-detail-right {
+    flex: 1;
+}
+
+.modal-price {
+    font-size: 24px;
+    color: #c00;
+    font-weight: bold;
+    margin: 10px 0 20px 0;
+}
+
+.quantity-selector {
+    margin-bottom: 20px;
+}
+
+.quantity-selector input {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-add-to-cart {
+    background-color: #f39c12; /* Màu cam */
+    color: white;
+    /* Đảm bảo nút có khoảng cách bên phải */
+    margin-right: 8px; /* Thêm 8 pixel khoảng cách bên phải */
+    
+    /* Đảm bảo các thuộc tính cơ bản khác */
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.btn-add-to-cart,
+.btn-buy,
+.product-card a {
+    text-decoration: none; /* Thuộc tính quan trọng để loại bỏ gạch chân */
+}
+
+.btn-buy-now {
+    background-color: #2ecc71; /* Màu xanh lá */
+    color: white;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+    .product-detail-container {
+        flex-direction: column;
+    }
+}
+
+/* --- SẢN PHẨM: NÚT THÊM VÀO GIỎ HÀNG (TRONG PRODUCT CARD) --- */
+
+.product-card .btn-add-to-cart {
+    background-color: #a0522d; /* Màu nâu đậm hơn một chút so với header */
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Kích thước hơi nhỏ hơn mua ngay để nổi bật màu chính */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 5px; /* Tạo khoảng cách với nút Mua ngay */
+    display: inline-block; /* Quan trọng để hiển thị song song */
+}
+
+.product-card .btn-add-to-cart:hover {
+    background-color: #333;
+}
+
+/* Điều chỉnh chung cho các nút trong product card */
+.product-card button {
+    margin: 5px 0; /* Thêm margin dọc cho các nút */
+    width: auto; /* Đảm bảo nút không bị kéo dãn toàn bộ chiều ngang */
+}
+
+/* Cập nhật style chung cho các nút trong product-card */
+.product-card button, 
+.product-card a.btn-add-to-cart, 
+.product-card a.btn-buy {
+    /* Đảm bảo lề dưới và hiển thị đúng */
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* -------- FOOTER -------- */
 footer {
-    margin-top: 40px;
+    /* ĐÃ XÓA: margin-top: 40px; vì content-wrap đã lo phần đẩy xuống */
     background-color: #d2691e;
     color: white;
     text-align: center;
     padding: 20px;
     font-size: 14px;
+    /* FOOTER SẼ LUÔN ĐƯỢC ĐẨY XUỐNG DƯỚI CÙNG */
 }
 
 footer p {

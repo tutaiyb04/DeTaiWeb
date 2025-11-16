@@ -168,6 +168,56 @@ header {
     min-height: 35px;
 }
 
+.product-card p {
+    /* Đảm bảo chiều cao tối thiểu cho mô tả */
+    min-height: 40px; /* Hoặc 60px tùy thuộc vào 2-3 dòng mô tả */
+    margin-bottom: 10px;
+    
+    /* Ẩn bớt nếu mô tả quá dài và tránh làm lệch bố cục */
+    overflow: hidden; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.product-card .btn-add-to-cart {
+    background-color: #a0522d; /* Màu nâu đậm hơn một chút so với header */
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Kích thước hơi nhỏ hơn mua ngay để nổi bật màu chính */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 5px; /* Tạo khoảng cách với nút Mua ngay */
+    display: inline-block; /* Quan trọng để hiển thị song song */
+}
+
+.product-card .btn-add-to-cart:hover {
+    background-color: #333;
+}
+
+/* Điều chỉnh chung cho các nút trong product card */
+.product-card button {
+    margin: 5px 0; /* Thêm margin dọc cho các nút */
+    width: auto; /* Đảm bảo nút không bị kéo dãn toàn bộ chiều ngang */
+}
+
+/* Cập nhật style chung cho các nút trong product-card */
+.product-card button, 
+.product-card a.btn-add-to-cart, 
+.product-card a.btn-buy {
+    /* Đảm bảo lề dưới và hiển thị đúng */
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.btn-add-to-cart,
+.btn-buy,
+.product-card a {
+    text-decoration: none; /* Thuộc tính quan trọng để loại bỏ gạch chân */
+}
+
 .price {
     font-weight: bold;
     color: #d46b08;

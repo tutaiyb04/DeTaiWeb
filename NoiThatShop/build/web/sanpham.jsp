@@ -11,12 +11,12 @@
     if (categoryIdParam != null && !categoryIdParam.isEmpty()) {
         try {
             int categoryId = Integer.parseInt(categoryIdParam);
-            list = dao.getProductsByCategory(categoryId);
+            list = dao.getProductsByCategoryNonDiscounted(categoryId);
         } catch (Exception e) {
-            list = dao.listAll();
+            list = dao.listAllNonDiscounted();
         }
     } else {
-        list = dao.listAll();
+        list = dao.listAllNonDiscounted();
     }
 %>
 
@@ -60,7 +60,10 @@
                     <h4><%= p.getTenSanPham() %></h4>
                     <p><%= p.getMoTa() %></p>
                     <div class="price"><%= String.format("%,.0f", p.getGia()) %> VNÐ</div>
-                    <button class="btn-buy">Mua ngay</button>
+                    <div class="button-group"> 
+                        <a href="CartServlet?action=add&productId=<%= p.getId() %>" class="btn-add-to-cart">Thêm vào giỏ hàng</a>
+                        <a href="CartServlet?action=buy&productId=<%= p.getId() %>" class="btn-buy">Mua ngay</a>
+                    </div>
                 </div>
 
                 <%
@@ -73,7 +76,6 @@
                 <%
                     }
                 %>
-
             </div>
         </section>
 

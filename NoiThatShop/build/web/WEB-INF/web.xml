@@ -16,6 +16,26 @@
         <servlet-name>DatLaiMatKhau</servlet-name>
         <servlet-class>com.fshop.serverlet.DatLaiMatKhau</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.fshop.serverlet.CartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>java</servlet-name>
+        <servlet-class>DiscountServlet.java</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DiscountServlet</servlet-name>
+        <servlet-class>com.fshop.serverlet.DiscountServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.fshop.serverlet.OrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QrGeneratorServlet</servlet-name>
+        <servlet-class>com.fshop.serverlet.QrGeneratorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductListServlet</servlet-name>
         <url-pattern>/ProductListServlet</url-pattern>
@@ -23,6 +43,26 @@
     <servlet-mapping>
         <servlet-name>SendMailServlet</servlet-name>
         <url-pattern>/SendMailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>java</servlet-name>
+        <url-pattern>/java</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DiscountServlet</servlet-name>
+        <url-pattern>/DiscountServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/OrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QrGeneratorServlet</servlet-name>
+        <url-pattern>/QrGeneratorServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

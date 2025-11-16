@@ -43,8 +43,12 @@ public class NguoiDungDAO {
                 user.setTenDangNhap(rs.getString("ten_dang_nhap"));
                 user.setHoTen(rs.getString("ho_ten"));
                 user.setEmail(rs.getString("email"));
+                // 🚀 THÊM CÁC THÔNG TIN THIẾU
+                user.setSoDienThoai(rs.getString("so_dien_thoai")); 
+                user.setDiaChi(rs.getString("dia_chi"));           
             }
         } catch (SQLException e) {
+            // ...
         }
         return user;
     }
@@ -126,7 +130,7 @@ public class NguoiDungDAO {
         return false;
     }
     
-   /**
+    /**
     * Cập nhật mật khẩu mới và xóa token khôi phục khỏi DB.
     * @param token Mã token để xác định người dùng
     * @param matKhauMoi Mật khẩu mới của người dùng (chưa được mã hóa/hashed)

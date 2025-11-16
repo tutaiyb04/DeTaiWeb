@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <header class="site-header">
     <div class="header-container">
         <div class="header-left">
@@ -21,7 +22,7 @@
         <% 
             } 
         %>
-            <a href="#">Giỏ hàng (0)</a>
+            <a href="giohang.jsp">Giỏ hàng</a>
             
            
         </div>
